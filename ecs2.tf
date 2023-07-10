@@ -92,7 +92,8 @@ resource "aws_lb_target_group" "flask_app_demo-v2" {
 }
 
 resource "aws_lb_listener" "flask_app_demo-v2" {
-  load_balancer_arn = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/4e313b468fd1a6f1"
+  load_balancer_arn = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/3be167bde5faca27"
+  port              = "8080"
   protocol          = "HTTP"
   default_action {
     type             = "forward"
@@ -179,7 +180,7 @@ EOF
 
 resource "aws_iam_role_policy" "task_role_policy-v2" {
   name   = "flask-app-demo-task-role-policy-v2"
-  role   = aws_iam_role.task_role.id
+  role   = aws_iam_role.task_role-v2.id
   policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -202,3 +203,5 @@ resource "aws_iam_role_policy" "task_role_policy-v2" {
 }
 EOF
 }
+
+
