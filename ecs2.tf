@@ -92,8 +92,7 @@ resource "aws_lb_target_group" "flask_app_demo-v2" {
 }
 
 resource "aws_lb_listener" "flask_app_demo-v2" {
-  load_balancer_arn = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/1d29f275d179d5c9"
-  port              = "8080"
+  load_balancer_arn = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/4e313b468fd1a6f1"
   protocol          = "HTTP"
   default_action {
     type             = "forward"
