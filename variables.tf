@@ -30,7 +30,7 @@ variable "github_repo_owner" {
   default = "vanshgulati16"
 }
 variable "github_repo_name" {
-  default = "terraform-ecs-codepipeline-demo-v2"
+  default = "new-service"
 }
 variable "github_branch" {
   default = "main"
