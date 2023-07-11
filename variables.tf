@@ -26,12 +26,12 @@ variable "image_tag" {
 variable "image_repo_url" {
   default = "936066658209.dkr.ecr.us-east-1.amazonaws.com/flask-demo-application-v2"
 }
-variable "github_repo_owner" {
-  default = "vanshgulati16"
-}
-variable "github_repo_name" {
-  default = "new-service"
-}
-variable "github_branch" {
-  default = "main"
-}
+# variable "github_repo_owner" {
+#   default = "vanshgulati16"
+# }
+# variable "github_repo_name" {
+#   default = "new-service"
+# }
+# variable "github_branch" {
+#   default = "main"
+# }
