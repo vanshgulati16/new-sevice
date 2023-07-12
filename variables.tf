@@ -17,14 +17,14 @@ variable "subnets" {
   ]
 }
 variable "image_repo_name" {
-  default = "flask-demo-application-v2"
+  default = "flask-demo-application"
 }
 
 variable "image_tag" {
   default = "latest"
 }
 variable "image_repo_url" {
-  default = "936066658209.dkr.ecr.us-east-1.amazonaws.com/flask-demo-application-v2"
+  default = "936066658209.dkr.ecr.us-east-1.amazonaws.com/flask-demo-application"
 }
 # variable "github_repo_owner" {
 #   default = "vanshgulati16"

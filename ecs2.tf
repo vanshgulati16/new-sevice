@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
   container_definitions = <<DEFINITION
 [
   {
-    "name": "flask-app-demo",
+    "name": "flask-app-demo-v2",
     "image": "${var.image_repo_url}:${var.image_tag}",
     "essential": true,
     "portMappings": [
