@@ -4,7 +4,7 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
-  task_role_arn            = aws_iam_role.task_role-v2.arn
+  task_role_arn            = aws_iam_role.task_role-2.arn
   container_definitions = <<DEFINITION
 [
   {
@@ -30,7 +30,7 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
   }
 ]
 DEFINITION
-  execution_role_arn = aws_iam_role.task_definition_role-v2.arn
+  execution_role_arn = aws_iam_role.task_definition_role-2.arn
   # runtime_platform {
   #   operating_system_family = "LINUX"
   #   cpu_architecture        = "X86_64"

@@ -5,15 +5,15 @@ variable "aws_region" {
   default = "us-east-1"
 }
 variable "vpc_id" {
-  default = "vpc-048b42853bc93e76b"
+  default = "vpc-0cf5db5184c53cfd2"
 }
 variable "subnets" {
   type = list(string)
   default = [
-    "subnet-00060d748fc5b2101",
-    "subnet-069b9389004c2f5e2",
-    "subnet-0f3b9c9c433adf52e",
-    "subnet-055f9c54c38aa10b9",
+    "subnet-0732ea16875c7155d",
+    "subnet-0d40ef6434cf878e8",
+    "subnet-0d92a749c7babdbf2",
+    "subnet-0920b3572a0a5de72",
   ]
 }
 variable "image_repo_name" {
