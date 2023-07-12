@@ -21,11 +21,6 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
     "memory": 512,  
     "logConfiguration": {
       "logDriver": "awslogs",
-      "options": {
-        "awslogs-group": "${aws_cloudwatch_log_group.flask_app_demo-v2.name}",
-        "awslogs-region": "${var.aws_region}",
-        "awslogs-stream-prefix": "flask-app-demo-v2"
-      }
     }
   }
 ]
