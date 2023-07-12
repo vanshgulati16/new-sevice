@@ -36,9 +36,9 @@ DEFINITION
   #   cpu_architecture        = "X86_64"
   # }
 }
-resource "aws_cloudwatch_log_group" "flask_app_demo-v2" {
-  name = "/ecs/flask-app-demo-v2"
-}
+# resource "aws_cloudwatch_log_group" "flask_app_demo-v2" {
+#   name = "/ecs/flask-app-demo-v2"
+# }
 resource "aws_ecs_service" "flask_app_demo-v2" {
   name            = "flask-app-demo-v2"
   cluster         = "arn:aws:ecs:us-east-1:936066658209:cluster/flask-app-demo"
