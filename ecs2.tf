@@ -52,7 +52,7 @@ resource "aws_ecs_service" "flask_app_demo-v2" {
   }
   load_balancer {
     target_group_arn = aws_lb_target_group.flask_app_demo-v2.arn
-    container_name   = "flask-app-demo"
+    container_name   = "flask-app-demo-v2"
     container_port   = 5000
   }
 }
