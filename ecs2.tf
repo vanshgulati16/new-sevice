@@ -31,10 +31,10 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
 ]
 DEFINITION
   execution_role_arn = aws_iam_role.task_definition_role-v2.arn
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "X86_64"
-  }
+  # runtime_platform {
+  #   operating_system_family = "LINUX"
+  #   cpu_architecture        = "X86_64"
+  # }
 }
 resource "aws_cloudwatch_log_group" "flask_app_demo-v2" {
   name = "/ecs/flask-app-demo-v2"
