@@ -216,46 +216,6 @@ resource "aws_iam_role_policy" "task_role_policy-2" {
 EOF
 }
 
-resource "aws_iam_role" "codebuild_service_role" {
-  name = "codebuild-demo-test-idk-service-role"
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "codebuild.amazonaws.com"
-      },
-      "Effect": "Allow",
-      "Sid": ""
-    }
-  ]
-}
-EOF
-}
-  # Attach additional policy with required permissions
-resource "aws_iam_role_policy" "codebuild_service_policy" {
-  name = "codebuild-service-role-policy"
-  role = aws_iam_role.codebuild_service_role.id
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "logs:CreateLogGroup",
-        "logs:PutLogEvents",
-        "elasticloadbalancing:CreateTargetGroup",
-        "iam:CreateRole"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-EOF
-}
 
 
 
