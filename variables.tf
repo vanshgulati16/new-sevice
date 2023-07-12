@@ -20,3 +20,13 @@ variable "subnets" {
 variable "load_balancer_arn" {
   default = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/ec5b4b7c66c02ca7"
 }
+
+variable "github_repo_owner" {
+  default = "vanshgulati16"
+}
+variable "github_repo_name" {
+  default = "new-service"
+}
+variable "github_branch" {
+  default = "main"
+}
