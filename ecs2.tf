@@ -106,7 +106,7 @@ resource "aws_lb_listener_rule" "flask_app_demo-v2" {
   }
 }
 resource "aws_iam_role" "task_definition_role-2" {
-  name = "flask_demo_task_definition-2"
+  name = "flask_demo_task_definition-2a"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -157,7 +157,7 @@ EOF
 }
 
 resource "aws_iam_role" "task_role-2" {
-  name               = "flask-app-demo-task-role-2"
+  name               = "flask-app-demo-task-role-2a"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
