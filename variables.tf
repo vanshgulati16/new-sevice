@@ -18,7 +18,7 @@ variable "subnets" {
 }
 
 variable "load_balancer_arn" {
-  default = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/ec5b4b7c66c02ca7"
+  default = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/022efa8662eb2dc1"
 }
 
 
