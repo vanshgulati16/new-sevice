@@ -132,8 +132,8 @@ resource "aws_iam_role" "task_definition_role-2" {
 EOF
 }
 resource "aws_iam_role_policy" "task_definition_policy-2" {
-  name = "flask_demo_task_definition_policy-2"
-  role = aws_iam_role.task_definition_role-2.id
+  name   = "flask_demo_task_definition_policy-2"
+  role   = aws_iam_role.task_definition_role-2.id
   policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -150,9 +150,14 @@ resource "aws_iam_role_policy" "task_definition_policy-2" {
         "secretsmanager:GetSecretValue",
         "ssm:GetParameters"
       ],
-      "Resource": [
-        "*"
-      ]
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup"
+      ],
+      "Resource": "arn:aws:logs:${var.aws_region}:${var.aws_account_id}:*"
     }
   ]
 }
@@ -198,10 +203,20 @@ resource "aws_iam_role_policy" "task_role_policy-2" {
         "ssm:GetParameters"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:CreateTargetGroup"
+      ],
+      "Resource": "*"
     }
   ]
 }
 EOF
 }
+
+
+
 
 
