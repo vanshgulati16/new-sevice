@@ -4,8 +4,8 @@ phases:
     commands:
       - echo cloning terraform files from github..
       - ls
-      - git clone https://github.com/vanshgulati16/new-sevice.git
-      - cd new-sevice
+      # - git clone https://github.com/vanshgulati16/new-sevice.git
+      # - cd new-sevice
       - ls
       - echo installing terraform..
       - wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
