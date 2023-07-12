@@ -233,7 +233,7 @@ resource "aws_iam_role" "codebuild_service_role" {
   ]
 }
 EOF
-
+}
   # Attach additional policy with required permissions
   policy {
     policy_name = "codebuild-service-role-policy"
