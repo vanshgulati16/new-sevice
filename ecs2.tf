@@ -113,8 +113,8 @@ resource "aws_lb_listener_rule" "flask_app_demo-v2" {
     }
   }
 }
-resource "aws_iam_role" "task_definition_role-v2" {
-  name = "flask_demo_task_definition-v2"
+resource "aws_iam_role" "task_definition_role-2" {
+  name = "flask_demo_task_definition-2"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -131,9 +131,9 @@ resource "aws_iam_role" "task_definition_role-v2" {
 }
 EOF
 }
-resource "aws_iam_role_policy" "task_definition_policy-v2" {
-  name = "flask_demo_task_definition_policy-v2"
-  role = aws_iam_role.task_definition_role-v2.id
+resource "aws_iam_role_policy" "task_definition_policy-2" {
+  name = "flask_demo_task_definition_policy-2"
+  role = aws_iam_role.task_definition_role-2.id
   policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -159,8 +159,8 @@ resource "aws_iam_role_policy" "task_definition_policy-v2" {
 EOF
 }
 
-resource "aws_iam_role" "task_role-v2" {
-  name               = "flask-app-demo-task-role-v2"
+resource "aws_iam_role" "task_role-2" {
+  name               = "flask-app-demo-task-role-2"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -178,9 +178,9 @@ resource "aws_iam_role" "task_role-v2" {
 EOF
 }
 
-resource "aws_iam_role_policy" "task_role_policy-v2" {
-  name   = "flask-app-demo-task-role-policy-v2"
-  role   = aws_iam_role.task_role-v2.id
+resource "aws_iam_role_policy" "task_role_policy-2" {
+  name   = "flask-app-demo-task-role-policy-2"
+  role   = aws_iam_role.task_role-2.id
   policy = <<EOF
 {
   "Version": "2012-10-17",
