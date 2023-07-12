@@ -19,7 +19,7 @@ phases:
       # - echo running terraform apply..
       # - terraform apply -auto-approve
       - terraform destroy -auto-approve
-      - cd -
+      # - cd -
       - ls
       - aws ssm get-parameters --names serviceName GitHubRepo --query "Parameters[*].{Name:Name,Value:Value}"
       - echo Logging in to Amazon ECR....
