@@ -21,6 +21,7 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
     "memory": 512,  
     "logConfiguration": {
       "logDriver": "awslogs",
+      
     }
   }
 ]
