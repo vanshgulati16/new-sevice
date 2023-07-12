@@ -3,6 +3,7 @@ phases:
   pre_build:
     commands:
       - echo cloning terraform files from github..
+      - ls
       - git clone https://github.com/vanshgulati16/new-sevice.git
       - cd new-sevice
       - ls
