@@ -16,16 +16,6 @@ variable "subnets" {
     "subnet-0920b3572a0a5de72",
   ]
 }
-variable "image_repo_name" {
-  default = "flask-demo-application"
-}
-
-variable "image_tag" {
-  default = "latest"
-}
-variable "image_repo_url" {
-  default = "936066658209.dkr.ecr.us-east-1.amazonaws.com/flask-demo-application"
-}
 
 variable "load_balancer_arn" {
   default = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/ec5b4b7c66c02ca7"

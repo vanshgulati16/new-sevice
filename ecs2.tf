@@ -9,7 +9,7 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
 [
   {
     "name": "flask-app-demo-v2",
-    "image": "${var.image_repo_url}:${var.image_tag}",
+    "image": "${aws_ecr_repository.ecr_repo.repository_url}:latest",
     "essential": true,
     "portMappings": [
       {
@@ -23,14 +23,7 @@ resource "aws_ecs_task_definition" "flask_app_demo-v2" {
 ]
 DEFINITION
   execution_role_arn = aws_iam_role.task_definition_role-2.arn
-  # runtime_platform {
-  #   operating_system_family = "LINUX"
-  #   cpu_architecture        = "X86_64"
-  # }
 }
-# resource "aws_cloudwatch_log_group" "flask_app_demo-v2" {
-#   name = "/ecs/flask-app-demo-v2"
-# }
 resource "aws_ecs_service" "flask_app_demo-v2" {
   name            = "flask-app-demo-v2"
   cluster         = "arn:aws:ecs:us-east-1:936066658209:cluster/flask-app-demo"
@@ -148,8 +141,7 @@ resource "aws_iam_role_policy" "task_definition_policy-2" {
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup"
-      ],
-      "Resource": "arn:aws:logs:${var.aws_region}:${var.aws_account_id}:*"
+      ]
     }
   ]
 }
@@ -199,7 +191,6 @@ resource "aws_iam_role_policy" "task_role_policy-2" {
     {
       "Effect": "Allow",
       "Action": [
-        "elasticloadbalancing:CreateTargetGroup"
       ],
       "Resource": "*"
     }
