@@ -235,9 +235,10 @@ resource "aws_iam_role" "codebuild_service_role" {
 EOF
 }
   # Attach additional policy with required permissions
-  policy {
-    policy_name = "codebuild-service-role-policy"
-    policy_document = <<EOF
+resource "aws_iam_role_policy" "codebuild_service_policy" {
+  name = "codebuild-service-role-policy"
+  role = aws_iam_role.codebuild_service_role.id
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
