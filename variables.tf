@@ -26,12 +26,7 @@ variable "image_tag" {
 variable "image_repo_url" {
   default = "936066658209.dkr.ecr.us-east-1.amazonaws.com/flask-demo-application"
 }
-# variable "github_repo_owner" {
-#   default = "vanshgulati16"
-# }
-# variable "github_repo_name" {
-#   default = "new-service"
-# }
-# variable "github_branch" {
-#   default = "main"
-# }
+
+variable "load_balancer_arn" {
+  default = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/ec5b4b7c66c02ca7"
+}

@@ -92,7 +92,7 @@ resource "aws_lb_target_group" "flask_app_demo-v2" {
 }
 
 resource "aws_lb_listener" "flask_app_demo-v2" {
-  load_balancer_arn = ""
+  load_balancer_arn = var.load_balancer_arn
   port              = "8080"
   protocol          = "HTTP"
   default_action {
