@@ -20,3 +20,32 @@ variable "subnets" {
 variable "load_balancer_arn" {
   default = "arn:aws:elasticloadbalancing:us-east-1:936066658209:loadbalancer/app/flask-app-demo/ec5b4b7c66c02ca7"
 }
+
+environment_variable {
+      name  = "AWS_ACCOUNT_ID"
+      value = var.aws_account_id
+    }
+    environment_variable {
+      name  = "AWS_DEFAULT_REGION"
+      value = var.aws_region
+    }
+    environment_variable {
+      name  = "IMAGE_REPO_NAME"
+      value = aws_ecr_repository.ecr_repo.name
+    }
+    environment_variable {
+      name  = "IMAGE_TAG"
+      value = "latest"
+    }
+    environment_variable {
+      name  = "ECS_CLUSTER_NAME"
+      value = aws_ecs_cluster.flask_app_demo.name
+    }
+    environment_variable {
+      name  = "ECS_SERVICE_NAME"
+      value = aws_ecs_service.flask_app_demo.name
+    }
+    environment_variable {
+      name  = "ECS_TASK_DEFINITION"
+      value = aws_ecs_task_definition.flask_app_demo.family
+    }
