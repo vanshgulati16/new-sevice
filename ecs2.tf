@@ -98,106 +98,106 @@ resource "aws_lb_listener_rule" "flask_app_demo-v2" {
     }
   }
 }
-# resource "aws_iam_role" "task_definition_role-2" {
-#   name = "flask_demo_task_definition-2a"
-#   assume_role_policy = <<EOF
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Action": "sts:AssumeRole",
-#       "Principal": {
-#         "Service": "ecs-tasks.amazonaws.com"
-#       },
-#       "Effect": "Allow",
-#       "Sid": ""
-#     }
-#   ]
-# }
-# EOF
-# }
-# resource "aws_iam_role_policy" "task_definition_policy-2" {
-#   name   = "flask_demo_task_definition_policy-2"
-#   role   = aws_iam_role.task_definition_role-2.id
-#   policy = <<EOF
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Effect": "Allow",
-#       "Action": [
-#         "ecr:BatchCheckLayerAvailability",
-#         "ecr:GetAuthorizationToken",
-#         "ecr:GetDownloadUrlForLayer",
-#         "ecr:BatchGetImage",
-#         "logs:CreateLogStream",
-#         "logs:PutLogEvents",
-#         "secretsmanager:GetSecretValue",
-#         "ssm:GetParameters"
-#       ],
-#       "Resource": "*"
-#     },
-#     {
-#       "Effect": "Allow",
-#       "Action": [
-#         "logs:CreateLogGroup"
-#       ]
-#     }
-#   ]
-# }
-# EOF
-# }
+resource "aws_iam_role" "task_definition_role-2" {
+  name = "flask_demo_task_definition-2a"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ecs-tasks.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+}
+resource "aws_iam_role_policy" "task_definition_policy-2" {
+  name   = "flask_demo_task_definition_policy-2"
+  role   = aws_iam_role.task_definition_role-2.id
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetAuthorizationToken",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "secretsmanager:GetSecretValue",
+        "ssm:GetParameters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup"
+      ]
+    }
+  ]
+}
+EOF
+}
 
-# resource "aws_iam_role" "task_role-2" {
-#   name               = "flask-app-demo-task-role-2a"
-#   assume_role_policy = <<EOF
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Action": "sts:AssumeRole",
-#       "Principal": {
-#         "Service": "ecs-tasks.amazonaws.com"
-#       },
-#       "Effect": "Allow",
-#       "Sid": ""
-#     }
-#   ]
-# }
-# EOF
-# }
+resource "aws_iam_role" "task_role-2" {
+  name               = "flask-app-demo-task-role-2a"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ecs-tasks.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+}
 
-# resource "aws_iam_role_policy" "task_role_policy-2" {
-#   name   = "flask-app-demo-task-role-policy-2"
-#   role   = aws_iam_role.task_role-2.id
-#   policy = <<EOF
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Effect": "Allow",
-#       "Action": [
-#         "ecr:GetAuthorizationToken",
-#         "ecr:BatchCheckLayerAvailability",
-#         "ecr:GetDownloadUrlForLayer",
-#         "ecr:BatchGetImage",
-#         "logs:CreateLogStream",
-#         "logs:PutLogEvents",
-#         "secretsmanager:GetSecretValue",
-#         "ssm:GetParameters"
-#       ],
-#       "Resource": "*"
-#     },
-#     {
-#       "Effect": "Allow",
-#       "Action": [
-#       ],
-#       "Resource": "*"
-#     }
-#   ]
-# }
-# EOF
-# }
+resource "aws_iam_role_policy" "task_role_policy-2" {
+  name   = "flask-app-demo-task-role-policy-2"
+  role   = aws_iam_role.task_role-2.id
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "secretsmanager:GetSecretValue",
+        "ssm:GetParameters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
 
 
 
