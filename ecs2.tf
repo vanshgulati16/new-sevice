@@ -60,6 +60,9 @@ resource "aws_security_group" "flask_app_demo-v2" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
+  tags = {
+    Name = "flask-app-demo-v2"
+  }
 }
 resource "aws_lb_target_group" "flask_app_demo-v2" {
   name        = "flask-app-demo-v2"
@@ -79,18 +82,18 @@ resource "aws_lb_target_group" "flask_app_demo-v2" {
   }
 }
 
-# resource "aws_lb_listener" "flask_app_demo-v2" {
-#   load_balancer_arn = var.load_balancer_arn
-#   port              = "8080"
-#   protocol          = "HTTP"
-#   default_action {
-#     type             = "forward"
-#     target_group_arn = aws_lb_target_group.flask_app_demo-v2.arn
-#   }
-# }
+resource "aws_lb_listener" "flask_app_demo-v2" {
+  load_balancer_arn = var.load_balancer_arn
+  port              = "80"
+  protocol          = "HTTP"
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.flask_app_demo-v2.arn
+  }
+}
 resource "aws_lb_listener_rule" "flask_app_demo-v2" {
-  listener_arn = var.load_balancer_listener_arn
-  priority     = 1
+  listener_arn = aws_lb_listener.flask_app_demo-v2.arn
+  priority     = 2
   action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.flask_app_demo-v2.arn
