@@ -191,12 +191,6 @@ resource "aws_iam_role_policy" "task_role_policy-2" {
     },
     {
       "Effect": "Allow",
-      "Action": [
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
       "Action": "elasticloadbalancing:CreateTargetGroup",
       "Resource": "*"
     }
