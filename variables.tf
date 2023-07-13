@@ -25,4 +25,10 @@ variable "load_balancer_listener_arn" {
   default = "arn:aws:elasticloadbalancing:us-east-1:936066658209:listener/app/flask-app-demo/022efa8662eb2dc1/9c60191c8da39adb"
 }
 
+data "aws_lb_listener" "listener" {
+  arn = var.load_balancer_listener_arn
+}
+
+
+
 
