@@ -14,11 +14,11 @@ phases:
       - terraform --version
       - echo running terraform init..
       - terraform init
-      # - echo running terraform plan..
-      # - terraform plan
-      # - echo running terraform apply..
-      # - terraform apply -auto-approve
-      - terraform destroy -auto-approve
+      - echo running terraform plan..
+      - terraform plan
+      - echo running terraform apply..
+      - terraform apply -auto-approve
+      # - terraform destroy -auto-approve
       # - cd -
       - ls
       # - aws ssm get-parameters --names serviceName GitHubRepo --query "Parameters[*].{Name:Name,Value:Value}"
