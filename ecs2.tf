@@ -141,7 +141,8 @@ resource "aws_iam_role_policy" "task_definition_policy-2" {
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup"
-      ]
+      ],
+      "Resource": "*"
     }
   ]
 }
