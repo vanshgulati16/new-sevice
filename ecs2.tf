@@ -79,17 +79,17 @@ resource "aws_lb_target_group" "flask_app_demo-v2" {
   }
 }
 
-resource "aws_lb_listener" "flask_app_demo-v2" {
-  load_balancer_arn = var.load_balancer_arn
-  port              = "8080"
-  protocol          = "HTTP"
-  default_action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.flask_app_demo-v2.arn
-  }
-}
+# resource "aws_lb_listener" "flask_app_demo-v2" {
+#   load_balancer_arn = var.load_balancer_arn
+#   port              = "8080"
+#   protocol          = "HTTP"
+#   default_action {
+#     type             = "forward"
+#     target_group_arn = aws_lb_target_group.flask_app_demo-v2.arn
+#   }
+# }
 resource "aws_lb_listener_rule" "flask_app_demo-v2" {
-  listener_arn = aws_lb_listener.flask_app_demo-v2.arn
+  listener_arn = var.load_balancer_listener_arn
   priority     = 1
   action {
     type             = "forward"
@@ -97,7 +97,7 @@ resource "aws_lb_listener_rule" "flask_app_demo-v2" {
   }
   condition {
     path_pattern {
-      values = ["/"]
+      values = ["/app"]
     }
   }
 }
