@@ -74,6 +74,9 @@ resource "aws_lb_target_group" "flask_app_demo-v2" {
     healthy_threshold   = 2
     unhealthy_threshold = 2
   }
+  tags = {
+    Name = "flask-app-demo-v2"
+  }
 }
 
 resource "aws_lb_listener" "flask_app_demo-v2" {
